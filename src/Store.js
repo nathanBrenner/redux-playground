@@ -6,6 +6,12 @@ export const Actions = {
   SET_VISIBILITY_FILTER: "SET_VISIBILITY_FILTER"
 };
 
+export const Filters = {
+  ALL: "SHOW_ALL",
+  ACTIVE: "SHOW_ACTIVE",
+  COMPLETED: "SHOW_COMPLETED"
+};
+
 const todo = (state, action) => {
   switch (action.type) {
     case "ADD_TODO":
@@ -26,18 +32,18 @@ const todo = (state, action) => {
 
 const todos = (state = [], action) => {
   switch (action.type) {
-    case "ADD_TODO":
+    case Actions.ADD_TODO:
       return [...state, todo(undefined, action)];
-    case "TOGGLE_TODO":
+    case Actions.TOGGLE_TODO:
       return state.map(t => todo(t, action));
     default:
       return state;
   }
 };
 
-const visibilityFilter = (state = "SHOW_ALL", action) => {
+const visibilityFilter = (state = Filters.ALL, action) => {
   switch (action.type) {
-    case "SET_VISIBILITY_FILTER":
+    case Actions.SET_VISIBILITY_FILTER:
       return action.filter;
     default:
       return state;
@@ -49,6 +55,7 @@ const todoApp = combineReducers({
   visibilityFilter
 });
 
+// example implementation on Redux combineReducers
 // const combineReducers = reducers => {
 //   return (state = {}, action) => {
 //     return Object.keys(reducers).reduce((nextState, key) => {
