@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 
 const byId = (state = {}, action) => {
   switch (action.type) {
-    case "RECIEVE_TODOS":
+    case "RECEIVE_TODOS":
       const nextState = { ...state };
       action.response.forEach(todo => {
         nextState[todo.id] = todo;
@@ -32,6 +32,8 @@ const activeIds = (state = [], action) => {
   switch (action.type) {
     case "RECEIVE_TODOS":
       return action.response.map(todo => todo.id);
+    default:
+      return state;
   }
 };
 
@@ -42,6 +44,8 @@ const completedIds = (state = [], action) => {
   switch (action.type) {
     case "RECEIVE_TODOS":
       return action.response.map(todo => todo.id);
+    default:
+      return state;
   }
 };
 
@@ -58,7 +62,6 @@ const todos = combineReducers({
 
 export default todos;
 
-// selectors
 export const getVisibleTodos = (state, filter) => {
   const ids = state.idsByFilter[filter];
   return ids.map(id => state.byId[id]);
