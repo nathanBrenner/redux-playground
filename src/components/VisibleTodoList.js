@@ -19,7 +19,7 @@ class VisibleTodoList extends Component {
 
   fetchData() {
     const { filter, fetchTodos } = this.props;
-    fetchTodos(filter);
+    fetchTodos(filter).then(() => console.log("done!"));
   }
 
   render() {
@@ -35,7 +35,6 @@ VisibleTodoList.propTypes = {
   filter: PropTypes.oneOf(["all", "active", "completed"]).isRequired,
   todos: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
-  requestTodos: PropTypes.func.isRequired,
   fetchTodos: PropTypes.func.isRequired,
   toggleTodo: PropTypes.func.isRequired
 };
