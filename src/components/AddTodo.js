@@ -5,7 +5,7 @@ import { addTodo } from "../actions";
 
 let AddTodo = ({ dispatch }) => {
   let input;
-  return (
+  const comp = (
     <div>
       <input
         ref={node => {
@@ -22,6 +22,8 @@ let AddTodo = ({ dispatch }) => {
       </button>
     </div>
   );
+  console.log(comp);
+  return comp;
 };
 
 AddTodo.propTypes = {
