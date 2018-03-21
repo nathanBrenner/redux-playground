@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import types from "../constants";
 
 const createList = filter => {
   const handleToggle = (state, action) => {
@@ -15,13 +16,13 @@ const createList = filter => {
 
   const ids = (state = [], action) => {
     switch (action.type) {
-      case "FETCH_TODOS_SUCCESS":
+      case types.FETCH_TODOS_SUCCESS:
         return filter === action.filter ? action.response.result : state;
-      case "ADD_TODO_SUCCESS":
+      case types.ADD_TODO_SUCCESS:
         return filter !== "completed"
           ? [...state, action.response.result]
           : state;
-      case "TOGGLE_TODO_SUCCESS":
+      case types.TOGGLE_TODO_SUCCESS:
         return handleToggle(state, action);
       default:
         return state;
@@ -33,10 +34,10 @@ const createList = filter => {
       return state;
     }
     switch (action.type) {
-      case "FETCH_TODOS_REQUEST":
+      case types.FETCH_TODOS_REQUEST:
         return true;
-      case "FETCH_TODOS_SUCCESS":
-      case "FETCH_TODOS_FAILURE":
+      case types.FETCH_TODOS_SUCCESS:
+      case types.FETCH_TODOS_FAILURE:
         return false;
       default:
         return state;
@@ -48,10 +49,10 @@ const createList = filter => {
       return state;
     }
     switch (action.type) {
-      case "FETCH_TODOS_FAILURE":
+      case types.FETCH_TODOS_FAILURE:
         return action.message;
-      case "FETCH_TODOS_REQUEST":
-      case "FETCH_TODOS_SUCCESS":
+      case types.FETCH_TODOS_REQUEST:
+      case types.FETCH_TODOS_SUCCESS:
         return null;
       default:
         return state;
