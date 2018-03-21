@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FetchError snapshot 1`] = `
+<div>
+  <p>
+    Could not fetch todos. 
+  </p>
+  <button
+    onClick={undefined}
+  >
+    Retry
+  </button>
+</div>
+`;

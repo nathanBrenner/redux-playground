@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer snapshot 1`] = `
+<p>
+  Show: 
+  <a
+    aria-current="true"
+    className="active"
+    href="/"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "black",
+        "textDecoration": "none",
+      }
+    }
+  >
+    All
+  </a>
+  , 
+  <a
+    aria-current={false}
+    className={undefined}
+    href="/active"
+    onClick={[Function]}
+    style={undefined}
+  >
+    Active
+  </a>
+  , 
+  <a
+    aria-current={false}
+    className={undefined}
+    href="/completed"
+    onClick={[Function]}
+    style={undefined}
+  >
+    Completed
+  </a>
+</p>
+`;
