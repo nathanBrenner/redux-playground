@@ -1,16 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import App from "./App";
 import configureStore from "../configureStore";
+import { shallow } from "enzyme";
 
 describe("App", () => {
-  test("true should be true", () => {
-    expect(true).toBe(true);
-  });
-
-  xtest("it renders without crashing", () => {
-    const div = document.createElement("div");
+  test("renders without crashing", () => {
     const store = configureStore();
-    ReactDOM.render(<App store={store} />, div);
+    shallow(<App store={store} />);
   });
 });

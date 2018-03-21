@@ -1,6 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
-import { render } from "react-dom";
+import { shallow } from "enzyme";
 
 describe("Todo", () => {
   test("true should be true", () => {
@@ -12,7 +12,6 @@ describe("Todo", () => {
     const completed = false;
     const text = "do something";
     const props = { onClick, completed, text };
-    const div = document.createElement("div");
-    render(<Todo {...props} />, div);
+    shallow(<Todo {...props} />);
   });
 });
