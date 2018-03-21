@@ -1,4 +1,4 @@
-import { v4 } from "node-uuid";
+const v4 = require("uuid/v4");
 
 // This is a fake in-memory implementation of something
 // that would be implemented by calling a REST server.
