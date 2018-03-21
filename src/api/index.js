@@ -6,17 +6,17 @@ const v4 = require("uuid/v4");
 const fakeDatabase = {
   todos: [
     {
-      id: v4(),
+      id: "d3aa75e9-b7ac-46be-a735-d7adc71d1969",
       text: "hey",
       completed: true
     },
     {
-      id: v4(),
+      id: "128b0ed6-33dd-43bb-8f78-d62eb2aba167",
       text: "ho",
       completed: true
     },
     {
-      id: v4(),
+      id: "316f368a-e57b-4573-ab7a-6b8981e7cc97",
       text: "let’s go",
       completed: false
     }
